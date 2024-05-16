@@ -3,12 +3,34 @@
 	script.textContent = 'console.log("This is a dynamically inserted script");';
 	document.body.appendChild(script);
 
-window.addEventListener('visibilitychange', function(event) {
-	if (document.visibilityState === 'hidden') {
-		Telegram.WebApp.sendData(JSON.stringify(25565));
-		t = 0;
-	}
-});
+a = '0';
+
+const { CloudStorage, postEvent } = require('@tma.js/sdk');
+
+const cloudStorage = new CloudStorage(
+	'6.10',
+	() => Math.random().toString(),
+	postEvent,
+);
+
+cloudStorage
+  .set('my-key', 'my-value1')
+  .then(() => console.log('Item saved'));
+
+cloudStorage
+  .get('my-key')
+  .then((value) => {
+    console.log(value);
+	a = value;
+    // Output: 'my-value'
+
+   });
+
+if (a == 'my-value1') {
+	Telegram.WebApp.sendData(JSON.stringify(25565));
+
+}
+
 t = 0;
 i = 5;
 Array.prototype.__yy_owner=0;var g_RUN=0x80000000;var JSON_game={Extensions:[],ExtensionOptions:{},Sounds:[],AudioGroups:[{name:"audiogroup_default",enabled:true,}],Sprites:[{pName:"Sprite1",width:1,height:1,transparent:false,smooth:false,preload:false,playbackspeed:30,TPEntryIndex:[17],sequence:{pName:"Sprite1",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:0,yorigin:0,volume:1,keyframeStore:[],tracks:[{modelName:"GMSpriteFramesTrack",pName:"frames",builtinName:0,traits:0,creationTrack:0,
