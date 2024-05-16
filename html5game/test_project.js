@@ -1,6 +1,7 @@
 ﻿var script = document.createElement('script');
 	script.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script);
+var script = document.createElement('script');
 	script.src = 'https://unpkg.com/@tma.js/sdk';
 	document.body.appendChild(script);
 
