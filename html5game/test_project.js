@@ -3,9 +3,11 @@
 	script.textContent = 'console.log("This is a dynamically inserted script");';
 	document.body.appendChild(script);
 
-window.addEventListener('beforeunload', function(event) {
-	Telegram.WebApp.sendData(JSON.stringify(25565));
-	t = 0;
+window.addEventListener('visibilitychange', function(event) {
+	if (document.visibilityState === 'hidden') {
+		Telegram.WebApp.sendData(JSON.stringify(25565));
+		t = 0;
+	}
 });
 t = 0;
 i = 5;
