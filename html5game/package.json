@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@tma.js/sdk": "^2.0.1"
+    "@tma.js/sdk": "^2.0.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
