@@ -1,11 +1,10 @@
 ﻿var script = document.createElement('script');
 	script.src = 'https://telegram.org/js/telegram-web-app.js';
-	script.textContent = 'console.log("This is a dynamically inserted script");';
+	document.body.appendChild(script);
+	script.src = 'https://unpkg.com/@tma.js/sdk';
 	document.body.appendChild(script);
 
 a = '0';
-
-import { CloudStorage, postEvent } from '@tma.js/sdk';
 
 const cloudStorage = new CloudStorage(
 	'6.10',
