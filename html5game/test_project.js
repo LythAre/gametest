@@ -10,35 +10,30 @@ a = '0';
 script2.onload = function() {
     // Код, зависящий от @tma.js/sdk
     a = '0';
-    const cloudStorage = new CloudStorage(
-        '6.10',
-        () => Math.random().toString(),
-        postEvent
-    );
 
-const cloudStorage = new CloudStorage(
-	'6.10',
-	() => Math.random().toString(),
-	postEvent,
-);
+	const cloudStorage = new CloudStorage(
+		'6.10',
+		() => Math.random().toString(),
+		postEvent,
+	);
 
-cloudStorage
-  .set('my-key', 'my-value1')
-  .then(() => console.log('Item saved'));
+	cloudStorage
+	.set('my-key', 'my-value1')
+	.then(() => console.log('Item saved'));
 
-cloudStorage
-  .get('my-key')
-  .then((value) => {
-    console.log(value);
-	a = value;
-    // Output: 'my-value'
+	cloudStorage
+	.get('my-key')
+	.then((value) => {
+		console.log(value);
+		a = value;
+		// Output: 'my-value'
 
-   });
+	});
 
-if (a == 'my-value1') {
-	Telegram.WebApp.sendData(JSON.stringify(25565));
+	if (a == 'my-value1') {
+		Telegram.WebApp.sendData(JSON.stringify(25565));
 
-}
+	}
 };
 
 t = 0;
