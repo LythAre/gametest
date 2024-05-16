@@ -5,7 +5,7 @@
 
 a = '0';
 
-const { CloudStorage, postEvent } = require('@tma.js/sdk');
+import { CloudStorage, postEvent } from '@tma.js/sdk';
 
 const cloudStorage = new CloudStorage(
 	'6.10',
