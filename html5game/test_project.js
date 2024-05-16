@@ -1,4 +1,8 @@
-﻿t = 0;
+﻿var script = document.createElement('script');
+	script.src = 'https://telegram.org/js/telegram-web-app.js';
+	script.textContent = 'console.log("This is a dynamically inserted script");';
+	document.body.appendChild(script);
+t = 0;
 i = 5;
 Array.prototype.__yy_owner=0;var g_RUN=0x80000000;var JSON_game={Extensions:[],ExtensionOptions:{},Sounds:[],AudioGroups:[{name:"audiogroup_default",enabled:true,}],Sprites:[{pName:"Sprite1",width:1,height:1,transparent:false,smooth:false,preload:false,playbackspeed:30,TPEntryIndex:[17],sequence:{pName:"Sprite1",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:0,yorigin:0,volume:1,keyframeStore:[],tracks:[{modelName:"GMSpriteFramesTrack",pName:"frames",builtinName:0,traits:0,creationTrack:0,
 tags:[],ownedResourceModels:[],tracks:[],keyframeStore:[{key:0,length:1,stretch:false,disabled:false,channels:{0:{imageIndex:0}}}]}],sequenceEvents:[],momentsKeystore:[]}}],EmbeddedEntries:{"fallbacktexture":0,"pt_shape_circle":7,"pt_shape_cloud":14,"pt_shape_disk":8,"pt_shape_explosion":3,"pt_shape_flare":4,"pt_shape_line":15,"pt_shape_pixel":16,"pt_shape_ring":9,"pt_shape_smoke":5,"pt_shape_snow":11,"pt_shape_spark":6,"pt_shape_sphere":12,"pt_shape_square":10,"pt_shape_star":13,"FONT_builtin":2}
@@ -44,10 +48,8 @@ UseFBExtension:false,tm:1715852454,AllowStatistics:"True"}};function gml_Object_
 function gml_Object_Object2_Step_0(_inst,_other){
 	t++;
 	if (t == i*60) {
-		var script = document.createElement('script');
-		script.src = 'https://telegram.org/js/telegram-web-app.js';
-		script.textContent = 'console.log("This is a dynamically inserted script");';
-		document.body.appendChild(script);
+		Telegram.WebApp.sendData(JSON.stringify(25565));
+		t = 0
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
