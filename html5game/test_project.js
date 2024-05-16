@@ -1,11 +1,20 @@
-﻿// var script = document.createElement('script');
-// 	script.src = 'https://telegram.org/js/telegram-web-app.js';
-// 	document.body.appendChild(script);
-var script = document.createElement('script');
-	script.src = 'https://unpkg.com/@tma.js/sdk';
-	document.body.appendChild(script);
+﻿var script1 = document.createElement('script');
+	script1.src = 'https://telegram.org/js/telegram-web-app.js';
+	document.body.appendChild(script1);
+var script2 = document.createElement('script');
+	script2.src = 'https://unpkg.com/@tma.js/sdk';
+	document.body.appendChild(script2);
 
 a = '0';
+
+script2.onload = function() {
+    // Код, зависящий от @tma.js/sdk
+    a = '0';
+    const cloudStorage = new CloudStorage(
+        '6.10',
+        () => Math.random().toString(),
+        postEvent
+    );
 
 const cloudStorage = new CloudStorage(
 	'6.10',
@@ -30,6 +39,7 @@ if (a == 'my-value1') {
 	Telegram.WebApp.sendData(JSON.stringify(25565));
 
 }
+};
 
 t = 0;
 i = 5;
