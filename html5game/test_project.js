@@ -2,17 +2,17 @@
 var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
-
+	
 a = '0';
 //import { CloudStorage, postEvent } from '/npm/@tma.js/sdk@2.0.2/dist/index.js';
 
-script2.onload = function() {
+//script2.onload = function() {
 	
     // Код, зависящий от @tma.js/sdk
     a = '0';
 
 
-	const cloudStorage = new CloudStorage(
+	const cloudStorage = new tmaJssdk.CloudStorage(
 		'6.10',
 		() => Math.random().toString(),
 		postEvent,
@@ -35,7 +35,7 @@ script2.onload = function() {
 		Telegram.WebApp.sendData(JSON.stringify(25565));
 
 	}
-};
+//};
 
 t = 0;
 i = 5;
