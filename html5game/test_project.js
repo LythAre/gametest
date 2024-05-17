@@ -7,15 +7,15 @@ var script2 = document.createElement('script');
 	document.body.appendChild(script2);
 
 a = '0';
+import { CloudStorage, postEvent } from '@tma.js/sdk';
 
 script2.onload = function() {
 	
     // Код, зависящий от @tma.js/sdk
     a = '0';
 
-	const sdkInstance = new TmaSdk();
 
-	const cloudStorage = new sdkInstance.CloudStorage(
+	const cloudStorage = new CloudStorage(
 		'6.10',
 		() => Math.random().toString(),
 		postEvent,
