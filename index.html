@@ -102,10 +102,13 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/test_project.js"></script>
         <script type="module">
+            import tmaJssdk from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm'
+            import { CloudStorage } from tmaJssdk
             import { CloudStorage } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/dist/index.js';
         </script>
+
+        <script type="text/javascript" src="html5game/test_project.js"></script>
         
         <!-- <script type="text/javascript" src="html5game/test_project.js?cachebust=2113554443"></script> -->
 
