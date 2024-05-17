@@ -78,9 +78,9 @@ function gml_Object_Object2_Step_0(_inst,_other){
 	if (t == i*60) {
 		t=0
 		if (window.cloudStorage) {
-			// window.cloudStorage
-			// .set('my-key', 'my-value1')
-			// .then(() => console.log('Item saved'));
+			window.cloudStorage
+			.set('my-key', 'my-value1')
+			.then(() => console.log('Item saved'));
 			a="1"
 
 			window.cloudStorage
