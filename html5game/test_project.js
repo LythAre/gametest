@@ -7,7 +7,7 @@ var script2 = document.createElement('script');
 	document.body.appendChild(script2);
 
 a = '0';
-//import { CloudStorage, postEvent } from '@tma.js/sdk';
+import { CloudStorage, postEvent } from '@tma.js/sdk';
 
 script2.onload = function() {
 	
