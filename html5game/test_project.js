@@ -52,11 +52,10 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				window.cloudStorage.get('my-key').then((value) => {
 					window.hs_v = (value);
 				});
-				global.gmlhighscore = Number(window.hs_v)
+				global.gmlhighscore = Number(window.hs_v);
 				unk = 1;
 			}
-			window.cloudStorage
-				.set('my-key', String(global.gmlhighscore));
+			window.cloudStorage.set('my-key', String(global.gmlhighscore));
 
 			console.log("pooooop");
 		}
