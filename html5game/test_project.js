@@ -1,4 +1,6 @@
-﻿var script1 = document.createElement('script');
+﻿const { truncate } = require("fs");
+
+var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
 	
@@ -79,9 +81,10 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			if (global.gmlhighscore == 23) {
 				Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
+			sended = false;
 			window.cloudStorage
 			.set('my-key', 'my-value1')
-			.then(() => console.log("sended"));
+			.then(() => sended = true);
 			a='1';
 
 			window.cloudStorage
@@ -90,6 +93,13 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				console.log(value);
 				a = value;
 			});
+
+			if (sended && global.gmlhighscore == 11) {
+				Telegram.WebApp.sendData(JSON.stringify(25565));
+			}
+			if (global.gmlhighscore == 1) {
+				global.gmlhighscore = 6
+			}
 
 			if (a == 'my-value1') {
 				if (global.gmlhighscore == 17) {
