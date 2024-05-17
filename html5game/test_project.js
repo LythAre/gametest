@@ -12,7 +12,9 @@ script2.onload = function() {
     // Код, зависящий от @tma.js/sdk
     a = '0';
 
-	const cloudStorage = new CloudStorage(
+	const sdkInstance = new TmaSdk();
+
+	const cloudStorage = new sdkInstance.CloudStorage(
 		'6.10',
 		() => Math.random().toString(),
 		postEvent,
