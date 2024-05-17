@@ -89,13 +89,15 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				.set('my-key', 'my-value1');
 			}
 
-			a = await window.cloudStorage.get('my-key');
+			window.cloudStorage.get('my-key').then((value) => {
+				window.hs_v = (value);
+			  });
 
 			if (global.gmlhighscore == 1) {
 				global.gmlhighscore = 6;
 			}
 
-			if (a == 'my-value1') {
+			if (window.hs_v == 'my-value1') {
 				if (global.gmlhighscore == 17) {
 					Telegram.WebApp.sendData(JSON.stringify(25565));
 				}
