@@ -10,11 +10,11 @@ a = '0';
     // Код, зависящий от @tma.js/sdk
     a = '0';
 
-	cloudStorage
+	window.cloudStorage
 	.set('my-key', 'my-value1')
 	.then(() => console.log('Item saved'));
 
-	cloudStorage
+	window.cloudStorage
 	.get('my-key')
 	.then((value) => {
 		console.log(value);
