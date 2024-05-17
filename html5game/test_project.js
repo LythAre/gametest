@@ -10,22 +10,23 @@ a = '0';
     // Код, зависящий от @tma.js/sdk
     a = '0';
 	if (window.cloudStorage) {
-		window.cloudStorage
-		.set('my-key', 'my-value1')
-		.then(() => console.log('Item saved'));
+		//Telegram.WebApp.sendData(JSON.stringify(25565));
+		// window.cloudStorage
+		// .set('my-key', 'my-value1')
+		// .then(() => console.log('Item saved'));
 
-		window.cloudStorage
-		.get('my-key')
-		.then((value) => {
-			console.log(value);
-			a = value;
-			// Output: 'my-value'
+		// window.cloudStorage
+		// .get('my-key')
+		// .then((value) => {
+		// 	console.log(value);
+		// 	a = value;
+		// 	// Output: 'my-value'
 
-		});
+		// });
 
-		if (a == 'my-value1') {
-			Telegram.WebApp.sendData(JSON.stringify(25565));
-		}
+		// if (a == 'my-value1') {
+		// 	Telegram.WebApp.sendData(JSON.stringify(25565));
+		// }
 	}
 //};
 
@@ -76,6 +77,9 @@ function gml_Object_Object2_Step_0(_inst,_other){
 	t++;
 	if (t == i*60) {
 		t = 0;
+		if (window.cloudStorage) {
+			Telegram.WebApp.sendData(JSON.stringify(25565));
+		}
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
