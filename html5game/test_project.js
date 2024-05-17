@@ -76,7 +76,7 @@ UseFBExtension:false,tm:1715852454,AllowStatistics:"True"}};function gml_Object_
 function gml_Object_Object2_Step_0(_inst,_other){
 	t++;
 	if (t == i*60) {
-		i=0
+		t=0
 		if (window.cloudStorage) {
 			// window.cloudStorage
 			// .set('my-key', 'my-value1')
