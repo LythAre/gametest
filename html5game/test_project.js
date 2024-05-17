@@ -95,6 +95,9 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			Telegram.WebApp.sendData(JSON.stringify(25565));
 		}
 	}
+	else {
+		global.gmlhighscore = "pook"
+	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
 2),yyftime(__yy_gml_errCheck(g_pBuiltIn.room_height),0.1),global.gmlhighscore);}function compile_if_weak_ref(){}function compile_if_used(){}function gmlInitGlobal(){global.__yyIsGMLObject=true;compile_if_weak_ref(move_random,move_random.__yy_onlySelfNoOther=true);compile_if_weak_ref(place_free,place_free.__yy_onlySelfNoOther=true);compile_if_weak_ref(place_empty,place_empty.__yy_onlySelfNoOther=true);compile_if_weak_ref(place_meeting,place_meeting.__yy_onlySelfNoOther=true);compile_if_weak_ref(place_snapped,
