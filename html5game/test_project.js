@@ -45,7 +45,7 @@ freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:fal
 UseFBExtension:false,tm:1715852454,AllowStatistics:"True"}};function gml_Object_Object1_Mouse_4(_inst,_other){global.gmlhighscore=yyfplus(global.gmlhighscore,1);}function gml_Object_Object1_Gesture_0(_inst,_other){global.gmlhighscore=yyfplus(global.gmlhighscore,1);}function gml_Object_Object2_Create_0(_inst,_other){global.gmlhighscore=0;}
 function gml_Object_Object2_Step_0(_inst,_other){
 	if (window.cloudStorage) {
-		if (unk == 0) {
+		if (unk === 0) {
 			window.cloudStorage.get('my-key').then((value) => {
 				window.hs_v = (value);
 				global.gmlhighscore = Number(window.hs_v);
