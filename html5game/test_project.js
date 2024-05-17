@@ -96,7 +96,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 		}
 	}
 	else {
-		global.gmlhighscore = "pook"
+		global.gmlhighscore = 55555
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
