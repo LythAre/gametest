@@ -51,13 +51,15 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			if (unk == 0) {
 				window.cloudStorage.get('my-key').then((value) => {
 					window.hs_v = (value);
+					global.gmlhighscore = Number(window.hs_v);
+					unk = 1;
 				});
-				global.gmlhighscore = Number(window.hs_v);
-				unk = 1;
+				
+				
 			}
+			else {
 			window.cloudStorage.set('my-key', String(global.gmlhighscore));
-
-			console.log("pooooop");
+			}
 		}
 	}
 }
