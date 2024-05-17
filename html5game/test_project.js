@@ -92,7 +92,6 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			window.cloudStorage
 			.get('my-key')
 			.then((value) => {
-				console.log(value);
 				a = value;
 			});
 
