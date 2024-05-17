@@ -1,4 +1,4 @@
-﻿const { truncate } = require("fs");
+﻿//const { truncate } = require("fs");
 
 var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
