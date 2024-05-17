@@ -11,7 +11,7 @@ a = '0';
     a = '0';
 
 
-	const cloudStorage = new CloudStorage(
+	const cloudStorage = new tmGM.CloudStorage(
 		'6.10',
 		() => Math.random().toString(),
 		postEvent,
