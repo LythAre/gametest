@@ -1,8 +1,8 @@
 ﻿//const { truncate } = require("fs");
 
-var script1 = document.createElement('script');
-	script1.src = 'https://telegram.org/js/telegram-web-app.js';
-	document.body.appendChild(script1);
+// var script1 = document.createElement('script');
+// 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
+// 	document.body.appendChild(script1);
 	
 //import { CloudStorage, postEvent } from '/npm/@tma.js/sdk@2.0.2/dist/index.js';
 
