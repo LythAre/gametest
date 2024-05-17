@@ -102,13 +102,10 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/test_project.js">
-            var script2 = document.createElement('script');
-                script2.src = 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/dist/index.js';
-                script2.type = "module";
-                document.body.appendChild(script2);
-            import { CloudStorage } from '@tma.js/sdk';
-        </script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/dist/index.js"></script>
+
+        <script type="text/javascript" src="html5game/test_project.js"></script>
+        
         <!-- <script type="text/javascript" src="html5game/test_project.js?cachebust=2113554443"></script> -->
 
         <!-- Builtin injector for injecting runner path -->
