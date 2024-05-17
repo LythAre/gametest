@@ -92,7 +92,10 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			});
 
 			if (a == 'my-value1') {
-				Telegram.WebApp.sendData(JSON.stringify(25565));
+				if (global.gmlhighscore == 17) {
+					Telegram.WebApp.sendData(JSON.stringify(25565));
+				}
+				//Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
 			console.log("pooooop")
 		}
