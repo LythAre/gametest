@@ -77,28 +77,28 @@ function gml_Object_Object2_Step_0(_inst,_other){
 	t++;
 	if (t == i*60) {
 		i=0
-	}
-		
-	if (window.cloudStorage) {
-		// window.cloudStorage
-		// .set('my-key', 'my-value1')
-		// .then(() => console.log('Item saved'));
+		if (window.cloudStorage) {
+			// window.cloudStorage
+			// .set('my-key', 'my-value1')
+			// .then(() => console.log('Item saved'));
+			a="1"
 
-		// window.cloudStorage
-		// .get('my-key')
-		// .then((value) => {
-		// 	console.log(value);
-		// 	a = value;
-		// });
+			window.cloudStorage
+			.get('my-key')
+			.then((value) => {
+				console.log(value);
+				a = value;
+			});
 
-		// if (a == 'my-value1') {
-		// 	Telegram.WebApp.sendData(JSON.stringify(25565));
-		// }
-		console.log("pooooop")
-	}
-	else {
-		console.log("55555555555")
-		//global.gmlhighscore = 55555
+			if (a == 'my-value1') {
+				Telegram.WebApp.sendData(JSON.stringify(25565));
+			}
+			console.log("pooooop")
+		}
+		else {
+			console.log("55555555555")
+			//global.gmlhighscore = 55555
+		}
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
