@@ -48,7 +48,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 	if (t == i*60) {
 		t=0;
 		if (window.cloudStorage) {
-			if (unk = 0) {
+			if (unk == 0) {
 				window.cloudStorage.get('my-key').then((value) => {
 					window.hs_v = (value);
 				});
