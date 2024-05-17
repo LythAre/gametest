@@ -98,7 +98,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
 			if (global.gmlhighscore == 1) {
-				global.gmlhighscore = 6
+				global.gmlhighscore = 6;
 			}
 
 			if (a == 'my-value1') {
