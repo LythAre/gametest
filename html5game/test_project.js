@@ -1,41 +1,42 @@
 ﻿var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
-function loadScript(url) {
-	return fetch(url)
-		.then(response => response.text())
-		.then(scriptContent => {
-			const script = document.createElement('script');
-			script.textContent = scriptContent;
-			document.body.appendChild(script);
-		})
-		.catch(err => console.error('Failed to load script:', err));
-}
+var script2 = document.createElement('script');
+	script2.src = 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+	document.body.appendChild(script2);
+
 a = '0';
 
-loadScript('https://unpkg.com/@tma.js/sdk')
-    .then(() => {
-        console.log('TMA SDK script loaded');
-        // Используйте глобально доступные объекты после загрузки скрипта
-        const cloudStorage = new window.TMA.CloudStorage(
-            '6.10',
-            () => Math.random().toString(),
-            window.TMA.postEvent,
-        );
-
-        cloudStorage.set('my-key', 'my-value1')
-            .then(() => console.log('Item saved'));
-
-        cloudStorage.get('my-key')
-            .then((value) => {
-                console.log(value);
-                if (value === 'my-value1') {
-                    window.Telegram.WebApp.sendData(JSON.stringify(25565));
-                }
-            });
-    })
-    .catch(err => console.error('Error loading TMA SDK script:', err));
+script2.onload = function() {
 	
+    // Код, зависящий от @tma.js/sdk
+    a = '0';
+
+	const cloudStorage = new CloudStorage(
+		'6.10',
+		() => Math.random().toString(),
+		postEvent,
+	);
+
+	cloudStorage
+	.set('my-key', 'my-value1')
+	.then(() => console.log('Item saved'));
+
+	cloudStorage
+	.get('my-key')
+	.then((value) => {
+		console.log(value);
+		a = value;
+		// Output: 'my-value'
+
+	});
+
+	if (a == 'my-value1') {
+		Telegram.WebApp.sendData(JSON.stringify(25565));
+
+	}
+};
+
 t = 0;
 i = 5;
 Array.prototype.__yy_owner=0;var g_RUN=0x80000000;var JSON_game={Extensions:[],ExtensionOptions:{},Sounds:[],AudioGroups:[{name:"audiogroup_default",enabled:true,}],Sprites:[{pName:"Sprite1",width:1,height:1,transparent:false,smooth:false,preload:false,playbackspeed:30,TPEntryIndex:[17],sequence:{pName:"Sprite1",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:0,yorigin:0,volume:1,keyframeStore:[],tracks:[{modelName:"GMSpriteFramesTrack",pName:"frames",builtinName:0,traits:0,creationTrack:0,

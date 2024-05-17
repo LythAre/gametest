@@ -1,6 +1,14 @@
 {
-  "dependencies": {
-    "@tma.js/sdk": "^2.0.1",
-    "@tma.js/sdk-solid": "^2.1.1"
-  }
+  "name": "html5game",
+  "version": "1.0.0",
+  "main": "test_project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack --mode development --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
