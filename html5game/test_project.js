@@ -81,7 +81,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			}
 			window.cloudStorage
 			.set('my-key', 'my-value1')
-			.then(() => Telegram.WebApp.sendData(JSON.stringify(25565)));
+			.then(() => console.log("sended"));
 			a='1';
 
 			window.cloudStorage
