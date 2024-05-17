@@ -94,9 +94,10 @@ function gml_Object_Object2_Step_0(_inst,_other){
 		// if (a == 'my-value1') {
 		// 	Telegram.WebApp.sendData(JSON.stringify(25565));
 		// }
+		console.log("pooooop")
 	}
 	else {
-		console.log(55555555555)
+		console.log("55555555555")
 		//global.gmlhighscore = 55555
 	}
 }
