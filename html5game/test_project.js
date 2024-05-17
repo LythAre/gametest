@@ -1,10 +1,7 @@
 ﻿var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
-var script2 = document.createElement('script');
-	script2.src = 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/dist/index.js';
-	script2.type = "module";
-	document.body.appendChild(script2);
+
 
 a = '0';
 //import { CloudStorage, postEvent } from '/npm/@tma.js/sdk@2.0.2/dist/index.js';
