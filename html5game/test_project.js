@@ -10,13 +10,6 @@ a = '0';
     // Код, зависящий от @tma.js/sdk
     a = '0';
 
-
-	window.cloudStorage = new CloudStorage(
-		'6.10',
-		() => Math.random().toString(),
-		postEvent,
-	);
-
 	cloudStorage
 	.set('my-key', 'my-value1')
 	.then(() => console.log('Item saved'));

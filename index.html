@@ -107,6 +107,11 @@
             import tmaJssdk from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm'
             //import { CloudStorage } from tmaJssdk
             //import { CloudStorage } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/dist/index.js';
+            window.cloudStorage = new CloudStorage(
+                '6.10',
+                () => Math.random().toString(),
+                postEvent,
+            );
         </script>
 
         <script type="text/javascript" src="html5game/test_project.js"></script>
