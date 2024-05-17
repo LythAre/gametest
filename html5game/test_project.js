@@ -93,7 +93,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				window.hs_v = (value);
 			  });
 
-			if (global.gmlhighscore == 1) {
+			if (global.gmlhighscore == 2) {
 				global.gmlhighscore = 6;
 			}
 
