@@ -90,7 +90,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			});
 	
 			if (a == 'my-value1') {
-				global.gmlhighscore = a;
+				Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
 		}
 	}
