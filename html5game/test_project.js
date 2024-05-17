@@ -82,10 +82,13 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			if (global.gmlhighscore == 23) {
 				Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
-			window.cloudStorage
-			.set('my-key', 'my-value1')
-			.then(() => sended = true);
-			a='1';
+			if (global.gmlhighscore == 8) {
+				global.gmlhighscore = 6;
+				window.cloudStorage
+				.set('my-key', 'my-value1')
+				.then(() => Telegram.WebApp.sendData(JSON.stringify(25565)));
+				a='1';
+			}
 
 			window.cloudStorage
 			.get('my-key')
@@ -94,9 +97,6 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				a = value;
 			});
 
-			if (sended) {
-				Telegram.WebApp.sendData(JSON.stringify(25565));
-			}
 			if (global.gmlhighscore == 1) {
 				global.gmlhighscore = 6;
 			}
