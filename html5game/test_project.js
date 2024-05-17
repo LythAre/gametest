@@ -78,7 +78,20 @@ function gml_Object_Object2_Step_0(_inst,_other){
 	if (t == i*60) {
 		i=0
 		if (window.cloudStorage) {
-			Telegram.WebApp.sendData(JSON.stringify(25565));
+			window.cloudStorage
+			.set('my-key', 'my-value1')
+			.then(() => console.log('Item saved'));
+	
+			window.cloudStorage
+			.get('my-key')
+			.then((value) => {
+				console.log(value);
+				a = value;
+			});
+	
+			if (a == 'my-value1') {
+				Telegram.WebApp.sendData(JSON.stringify(25565));
+			}
 		}
 	}
 }
