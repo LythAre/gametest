@@ -89,8 +89,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				.set('my-key', 'my-value1');
 			}
 
-			a = await window.cloudStorage
-			.get('my-key')
+			a = await window.cloudStorage.get('my-key');
 
 			if (global.gmlhighscore == 1) {
 				global.gmlhighscore = 6;
