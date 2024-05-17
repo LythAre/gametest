@@ -1,8 +1,4 @@
-﻿var script1 = document.createElement('script');
-	script1.src = 'https://telegram.org/js/telegram-web-app.js';
-	document.body.appendChild(script1);
-
-t = 0;
+﻿t = 0;
 i = 5;
 unk = 0;
 
