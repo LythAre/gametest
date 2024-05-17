@@ -8,32 +8,31 @@ var script2 = document.createElement('script');
 a = '0';
 
 script2.onload = function() {
-    // Код, зависящий от @tma.js/sdk
-    a = '0';
+	import('https://unpkg.com/@tma.js/sdk')
+        .then((tma) => {
+            console.log('TMA SDK loaded:', tma);
+            
+            // Теперь можем использовать импортированные объекты
+            const cloudStorage = new tma.CloudStorage(
+                '6.10',
+                () => Math.random().toString(),
+                tma.postEvent
+            );
 
-	const cloudStorage = new CloudStorage(
-		'6.10',
-		() => Math.random().toString(),
-		postEvent,
-	);
+            cloudStorage.set('my-key', 'my-value1')
+                .then(() => console.log('Item saved'));
 
-	cloudStorage
-	.set('my-key', 'my-value1')
-	.then(() => console.log('Item saved'));
-
-	cloudStorage
-	.get('my-key')
-	.then((value) => {
-		console.log(value);
-		a = value;
-		// Output: 'my-value'
-
-	});
-
-	if (a == 'my-value1') {
-		Telegram.WebApp.sendData(JSON.stringify(25565));
-
-	}
+            cloudStorage.get('my-key')
+                .then((value) => {
+                    console.log(value);
+                    if (value === 'my-value1') {
+                        Telegram.WebApp.sendData(JSON.stringify(25565));
+                    }
+                });
+        })
+        .catch((err) => {
+            console.error('Failed to load TMA SDK:', err);
+        });
 };
 
 t = 0;
