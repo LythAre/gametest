@@ -2,13 +2,11 @@
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
 	
-a = '0';
 //import { CloudStorage, postEvent } from '/npm/@tma.js/sdk@2.0.2/dist/index.js';
 
 //script2.onload = function() {
 	
     // Код, зависящий от @tma.js/sdk
-    a = '0';
 	if (window.cloudStorage) {
 		//Telegram.WebApp.sendData(JSON.stringify(25565));
 		// window.cloudStorage
@@ -81,7 +79,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			window.cloudStorage
 			.set('my-key', 'my-value1')
 			.then(() => console.log('Item saved'));
-			a="1"
+			a='1';
 
 			window.cloudStorage
 			.get('my-key')
@@ -94,10 +92,6 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				Telegram.WebApp.sendData(JSON.stringify(25565));
 			}
 			console.log("pooooop")
-		}
-		else {
-			console.log("55555555555")
-			//global.gmlhighscore = 55555
 		}
 	}
 }
