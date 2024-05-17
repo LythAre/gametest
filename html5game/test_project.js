@@ -92,7 +92,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 			window.cloudStorage
 			.get('my-key')
 			.then((value) => {
-				a = value;
+				console.log(value);
 			});
 
 			if (global.gmlhighscore == 1) {
