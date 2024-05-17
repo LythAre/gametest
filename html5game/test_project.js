@@ -1,5 +1,4 @@
-﻿import { CloudStorage } from '@tma.js/sdk';
-var script1 = document.createElement('script');
+﻿var script1 = document.createElement('script');
 	script1.src = 'https://telegram.org/js/telegram-web-app.js';
 	document.body.appendChild(script1);
 	
