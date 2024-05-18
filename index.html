@@ -10,17 +10,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
 
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
-        <script type="module">
-            import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm'
-            window.cloudStorage = new CloudStorage(
-                '6.10',
-                () => Math.random().toString(),
-                postEvent,
-            );
-            window.hs_v = '0';
-        </script>
-
         <!-- Builtin injector for disabling cache -->
         <meta http-equiv="pragma" content="no-cache"/>
 
@@ -88,9 +77,17 @@
             
         </style>
 
-        <!-- Custom PostStyle code is injected here -->
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script type="module">
+            import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm'
+            window.cloudStorage = new CloudStorage(
+                '6.10',
+                () => Math.random().toString(),
+                postEvent,
+            );
+            window.hs_v = '0';
+        </script>
         
-
         <!-- Builtin injector for injecting flurry analytics code -->
         
     </head>
@@ -125,7 +122,9 @@
         <script>
             window.onload = function() {
                 if (window.Telegram && window.Telegram.WebView) {
-                    GameMaker_Init;
+                    GameMaker_Init();
+                } else {
+                    console.error("Telegram WebView is not available.");
                 }
             }
         </script>
