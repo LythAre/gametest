@@ -76,6 +76,22 @@
             /* END - Custom Runner Styles */
             
         </style>
+
+        
+        <script type="module">
+            import { CloudStorage, postEvent, request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+            import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+
+            setDebug(false);
+
+            window.cloudStorage = new CloudStorage(
+                '6.10',
+                () => Math.random().toString(),
+                postEvent
+            );
+            window.hs_v = '0';
+
+        </script>
         
         <!-- Builtin injector for injecting flurry analytics code -->
         
@@ -110,21 +126,9 @@
         
 
         <script>
-            import('https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm')
-                .then(module => {
-                    const { CloudStorage, postEvent, request } = module;
-                    window.cloudStorage = new CloudStorage(
-                        '6.10',
-                        () => Math.random().toString(),
-                        postEvent,
-                    );
-                    window.hs_v = '0';
-
+            if (request) {
                     GameMaker_Init();
-                })
-                .catch(error => {
-                    console.error('Error loading TMA SDK module:', error);
-                });
+            }
         </script>
 
         <!-- Builtin injector for injecting google analytics code -->
