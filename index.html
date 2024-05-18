@@ -131,6 +131,7 @@
         
 
         <script>
+            import { request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
             await request('web_app_request_viewport', 'viewport_changed').then(() => {
                 GameMaker_Init();
             });
