@@ -77,27 +77,6 @@
             
         </style>
 
-        
-        <script type="module">
-            import { CloudStorage, postEvent, request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
-            import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
-
-            setDebug(false);
-
-            window.cloudStorage = new CloudStorage(
-                '6.10',
-                () => Math.random().toString(),
-                postEvent
-            );
-            window.hs_v = '0';
-
-            window.viewport = await request(
-                'web_app_request_viewport',
-                'viewport_changed'
-            );
-
-        </script>
-        
         <!-- Builtin injector for injecting flurry analytics code -->
         
     </head>
@@ -129,9 +108,19 @@
 
         <!-- Builtin injector for injecting runner path -->
         
-
         <script type="module">
-            import { request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+            import { CloudStorage, postEvent, request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+            import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+
+            setDebug(false);
+
+            window.cloudStorage = new CloudStorage(
+                '6.10',
+                () => Math.random().toString(),
+                postEvent
+            );
+            window.hs_v = '0';
+
             await request('web_app_request_viewport', 'viewport_changed').then(
                 GameMaker_Init()
             ).catch((error) => {
