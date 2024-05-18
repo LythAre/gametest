@@ -57,16 +57,16 @@ function gml_Object_Object2_Step_0(_inst,_other){
 				unk = 1;
 			});
 		}
-		// else if (t === i*60) {
-		// 	t=0;
-		// 	window.cloudStorage.set('highscore', String(global.gmlhighscore));
-		// }
-		else if (closingBehaviour) {
-			closingBehaviour.on('change', () => {
-				// Сохраняем прогресс игры
-				window.cloudStorage.set('highscore', String(global.gmlhighscore));
-			});
+		else if (t === i*60) {
+			t=0;
+			window.cloudStorage.set('highscore', String(global.gmlhighscore));
 		}
+		// else if (closingBehaviour) {
+		// 	closingBehaviour.on('change', () => {
+		// 		// Сохраняем прогресс игры
+		// 		window.cloudStorage.set('highscore', String(global.gmlhighscore));
+		// 	});
+		// }
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
