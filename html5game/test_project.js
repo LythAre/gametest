@@ -59,6 +59,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 		// 	window.cloudStorage.set('highscore', String(global.gmlhighscore));
 		// }
 		else if (closingBehaviour) {
+			closingBehaviour.enableConfirmation();
 			closingBehaviour.on('change:isConfirmationNeeded', (isConfirmationNeeded) => {
 				// Если подтверждение закрытия не требуется
 				if (!isConfirmationNeeded) {
