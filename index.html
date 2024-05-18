@@ -78,8 +78,8 @@
         </style>
 
         
-        <!-- <script type="module">
-            import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
+        <script type="module">
+            import { CloudStorage, postEvent, request }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
             import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
 
             setDebug(false);
@@ -89,7 +89,12 @@
                 postEvent,
             );
             window.hs_v = '0';
-        </script> -->
+
+            const viewport = await request(
+                'web_app_request_viewport',
+                'viewport_changed'
+            );
+        </script>
         
         <!-- Builtin injector for injecting flurry analytics code -->
         
@@ -102,7 +107,7 @@
     
 
     <body>
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
         <div class="gm4html5_div_class" id="gm4html5_div_id">
             
             <!-- Builtin injector for splash screen -->
