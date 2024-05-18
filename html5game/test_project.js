@@ -58,7 +58,7 @@ function gml_Object_Object2_Step_0(_inst,_other){
 		// 	t=0;
 		// 	window.cloudStorage.set('highscore', String(global.gmlhighscore));
 		// }
-		if (closingBehaviour) {
+		else if (closingBehaviour) {
 			closingBehaviour.enableConfirmation();
 			closingBehaviour.on('change', (isConfirmationNeeded) => {
 					// Ваш код, который нужно выполнить при отключении подтверждения закрытия
