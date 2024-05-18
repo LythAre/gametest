@@ -80,13 +80,11 @@
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script type="module">
             import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
-            import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
 
-            setDebug(true);
             window.cloudStorage = new CloudStorage(
                 '6.10',
                 () => Math.random().toString(),
-                postEvent
+                postEvent,
             );
             window.hs_v = '0';
         </script>
