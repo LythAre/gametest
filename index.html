@@ -82,7 +82,7 @@
             import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
             import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
 
-            setDebug(true);
+            setDebug(false);
             window.cloudStorage = new CloudStorage(
                 '6.10',
                 () => Math.random().toString(),
@@ -125,6 +125,10 @@
         <script>
             window.onload = function() {
                 if (window.Telegram && window.Telegram.WebView) {
+                    Telegram.WebApp.onEvent('viewport_changed', function(event) {
+                        console.log('Viewport changed event received:', event);
+                        // Handle the viewport changed event here
+                    });
                     GameMaker_Init();
                 } else {
                     console.error("Telegram WebView is not available.");
