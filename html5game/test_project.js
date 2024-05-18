@@ -46,18 +46,26 @@ freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:fal
 UseFBExtension:false,tm:1715852454,AllowStatistics:"True"}};function gml_Object_Object1_Mouse_4(_inst,_other){global.gmlhighscore=yyfplus(global.gmlhighscore,1);}function gml_Object_Object1_Gesture_0(_inst,_other){global.gmlhighscore=yyfplus(global.gmlhighscore,1);}function gml_Object_Object2_Create_0(_inst,_other){global.gmlhighscore=0;}
 function gml_Object_Object2_Step_0(_inst,_other){
 	if (window.cloudStorage) {
+		t++;
 		if (unk === 0) {
-			window.cloudStorage.get('my-key').then((value) => {
+			window.cloudStorage.get('highscore').then((value) => {
 				window.hs_v = (value);
 				global.gmlhighscore = Number(window.hs_v);
 				unk = 1;
 			});
 		}
-		else if (t === i*60) {
-			t=0;
-			window.cloudStorage.set('my-key', String(global.gmlhighscore));
+		// else if (t === i*60) {
+		// 	t=0;
+		// 	window.cloudStorage.set('highscore', String(global.gmlhighscore));
+		// }
+		if (closingBehaviour) {
+			closingBehaviour.on('change', (isConfirmationNeeded) => {
+				if (!isConfirmationNeeded) {
+					// Ваш код, который нужно выполнить при отключении подтверждения закрытия
+					window.cloudStorage.set('highscore', String(global.gmlhighscore));
+				}
+			});
 		}
-		t++;
 	}
 }
 function gml_Object_Object2_Draw_64(_inst,_other){draw_set_font(YYASSET_REF(0x06000000));draw_text(yyfdivide(__yy_gml_errCheck(g_pBuiltIn.room_width),
