@@ -126,9 +126,17 @@
         <script>
             window.onload = function() {
                 if (window.Telegram && window.Telegram.WebView) {
-                    Telegram.WebApp.onEvent('viewport_changed', function(event) {
-                        console.log('Viewport changed event received:', event);
-                        // Handle the viewport changed event here
+                    import('https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm').then(module => {
+                        const { CloudStorage, postEvent } = module;
+                        window.cloudStorage = new CloudStorage(
+                            '6.10',
+                            () => Math.random().toString(),
+                            postEvent,
+                        );
+                        window.hs_v = '0';
+                        console.log('CloudStorage initialized');
+                    }).catch(error => {
+                        console.error('Error loading TMA SDK module:', error);
                     });
                     GameMaker_Init();
                 } else {
