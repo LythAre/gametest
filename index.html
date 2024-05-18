@@ -78,7 +78,7 @@
         </style>
 
         
-        <!-- <script type="module">
+        <script type="module">
             import { CloudStorage, postEvent }  from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
             import { setDebug } from 'https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm';
 
@@ -89,8 +89,7 @@
                 postEvent,
             );
             window.hs_v = '0';
-        </script> -->
-        <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
+        </script>
         
         <!-- Builtin injector for injecting flurry analytics code -->
         
@@ -103,6 +102,7 @@
     
 
     <body>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <div class="gm4html5_div_class" id="gm4html5_div_id">
             
             <!-- Builtin injector for splash screen -->
@@ -124,21 +124,7 @@
         
 
         <script>
-            window.onload = function() {
-                    import('https://cdn.jsdelivr.net/npm/@tma.js/sdk@2.0.2/+esm').then(module => {
-                        const { CloudStorage, postEvent } = module;
-                        window.cloudStorage = new CloudStorage(
-                            '6.10',
-                            () => Math.random().toString(),
-                            postEvent,
-                        );
-                        window.hs_v = '0';
-                        console.log('CloudStorage initialized');
-                    }).catch(error => {
-                        console.error('Error loading TMA SDK module:', error);
-                    });
                     GameMaker_Init();
-            }
         </script>
 
         <!-- Builtin injector for injecting google analytics code -->
