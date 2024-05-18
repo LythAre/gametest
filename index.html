@@ -91,11 +91,6 @@
             );
             window.hs_v = '0';
 
-            window.viewport = await request(
-                'web_app_request_viewport',
-                'viewport_changed'
-            );
-
         </script>
         
         <!-- Builtin injector for injecting flurry analytics code -->
@@ -131,9 +126,9 @@
         
 
         <script>
-            if (window.viewport) {
+            request('web_app_request_viewport', 'viewport_changed').then(() => {
                 GameMaker_Init();
-            }
+            });
         </script>
 
         <!-- Builtin injector for injecting google analytics code -->
